@@ -23,6 +23,7 @@ After doing an NMAP scan, I can only see the 8090 port open at this first point.
 Not sure where @younbonnaffe got the credentials but basically you can access the cam with this:
 
 User: PpStRoNg
+
 Password: #%&wL1@*tU123zv
 
 This is the list of URL that I've currently checked and work (comparatively to @youribonnaffe's list, we have a lot more working):
@@ -207,6 +208,18 @@ I've tested other params like `day_night_mode` sending a form-data with day_nigh
 
 Then we can check the settings GET and we can see it has been modified which leads me to believe that the only params that are supported are the ones within that JSON GET Endpoint.
 
+## Electronics: Opening the Camera
+
+Here is the first pic I've took of the camera board:
+
+![ZS-GX1S Board](/img/zs-gx1s-1.jpg)
+
+Here we can clearly see a [Hi3518 IP-CAM SOC]() (ERNCV300).
+
+With [a quick search](https://www.ispyconnect.com/camera/hi3518), we see plenty of cams that use this chip with RTSP enable, which gives me a bit of hope 
+
+Also we can see a XMC4000 which is the flash chip. It's kind of funny because it uses almost the same architecture as the Bazz Doorbell that [@guino describes](https://github.com/guino/BazzDoorbell). So I still have hope that we can follow the same procedure
+
 ## Next steps: Opening RTSP or ONVIF (whichever first!)
 
 There is absolutely no info about ppstrong-b6 firmware models. 
@@ -231,7 +244,10 @@ Maybe there is another user/password for RTSP? I need to research further and mo
 
 ## Changelog:
 
-2002/05/08 - Initial release
+2022/05/09 
+- Opening the cam
+ 
+2022/05/08 - Initial release
 - Accessing the camera API via port 8090
 - Testing all the accessible endpoints
 
