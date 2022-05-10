@@ -220,6 +220,91 @@ With [a quick search](https://www.ispyconnect.com/camera/hi3518), we see plenty 
 
 Also we can see a XMC4000 which is the flash chip. It's kind of funny because it uses almost the same architecture as the Bazz Doorbell that [@guino describes](https://github.com/guino/BazzDoorbell). So I still have hope that we can follow the same procedure
 
+## Firmware
+
+After I've picked the firmware this is the binwalk result:
+
+```
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+2036141       0x1F11AD        Certificate in DER format (x509 v3), header length: 4, sequence length: 1284
+3327273       0x32C529        Certificate in DER format (x509 v3), header length: 4, sequence length: 5380
+4353761       0x426EE1        Certificate in DER format (x509 v3), header length: 4, sequence length: 13692
+4768532       0x48C314        Unix path: /home/sound/restart.wav
+4768656       0x48C390        Unix path: /home/sound/dingdong.wav
+4769712       0x48C7B0        Unix path: /home/sound/warning.wav
+4769952       0x48C8A0        Unix path: /home/cfg/mp_config.db
+4774112       0x48D8E0        Base64 standard index table
+4785188       0x490424        Unix path: /home/sound/login.wav
+4799759       0x493D0F        HTML document header
+4800439       0x493FB7        HTML document footer
+4801263       0x4942EF        HTML document header
+4801296       0x494310        HTML document footer
+4801659       0x49447B        HTML document header
+4801783       0x4944F7        HTML document footer
+4805567       0x4953BF        HTML document header
+4805608       0x4953E8        HTML document footer
+4805743       0x49546F        HTML document header
+4805927       0x495527        HTML document footer
+4816136       0x497D08        Unix path: /home/cfg/idcard.bin
+4824596       0x499E14        XML document, version: "1.0"
+4852372       0x4A0A94        PEM RSA private key
+4852588       0x4A0B6C        SHA256 hash constants, little endian
+4863144       0x4A34A8        PEM certificate
+4901308       0x4AC9BC        Unix path: /usr/local/etc/zoneinfo
+5107487       0x4DEF1F        Neighborly text, "Neighbor Cache Entries ||s %-10s"
+5107516       0x4DEF3C        Neighborly text, "Neighbor"
+5117392       0x4E15D0        Unix path: /home/hcq/share/code/meari/liteos_v5.0.1.3/platform/bsp/board/hi3518ev300/include/hisoc/i2c.h
+5139976       0x4E6E08        SHA256 hash constants, little endian
+5141848       0x4E7558        Unix path: /home/hcq/share/code/meari/liteos_v5.0.1.3/platform/bsp/board/hi3518ev300/include/hisoc/spi.h
+5142648       0x4E7878        Unix path: /home/hcq/share/code/meari/liteos_v5.0.1.3/platform/bsp/board/hi3518ev300/include/hisoc/uart.h
+5154276       0x4EA5E4        eCos RTOS string reference: "ECOST  CPUUSE   CPUUSE10s   CPUUSE1s   mode"
+5301888       0x50E680        Unix path: /home/cfg/random_para.txt
+5390412       0x52404C        CRC32 polynomial table, little endian
+5413428       0x529A34        Unix path: /home/pub/himpp_git_hi3516ev200/himpp/board/mpp/./../mpp/cbb/audio/mpi/src/hi_mpi_ai.c
+5418988       0x52AFEC        Unix path: /home/pub/himpp_git_hi3516ev200/himpp/board/mpp/./../mpp/cbb/audio/mpi/src/hi_mpi_ao.c
+5714584       0x573298        Unix path: /home/pub/himpp_git_hi3516ev200/himpp/board/mpp/./../mpp/cbb/audio/mpi/src/hi_mpi_adec.c
+5736120       0x5786B8        CRC32 polynomial table, little endian
+5797458       0x587652        TIFF image data, big-endian, offset of first image directory: 8
+5798916       0x587C04        TIFF image data, big-endian, offset of first image directory: 8
+5824344       0x58DF58        CRC32 polynomial table, little endian
+5863312       0x597790        Unix path: /home/nie/pro/v103/trunk/libAACenc/src/aacenc_lib.cpp
+5866328       0x598358        Unix path: /home/nie/pro/v103/trunk/libMpegTPEnc/src/tpenc_lib.cpp
+5866453       0x5983D5        Copyright string: "copyright law and international treaties."
+5877116       0x59AD7C        Unix path: /home/nie/pro/v103/trunk/libFDK/include/fixpoint_math.h
+5877880       0x59B078        Unix path: /home/nie/pro/v103/trunk/libAACenc/src/quantize.cpp
+5880820       0x59BBF4        Unix path: /home/nie/pro/v103/trunk/libAACenc/src/transform.cpp
+5892800       0x59EAC0        Unix path: /home/nie/pro/v103/trunk/libFDK/src/FDK_tools_rom.cpp
+5905856       0x5A1DC0        Unix path: /sys/class/pwm/pwmchip0/
+5906064       0x5A1E90        Unix path: /sys/class/pwm/pwmchip0/export
+5906928       0x5A21F0        Unix path: /home/hcq/share/code/meari/meari_sdk/src/mp_ipc_api.c
+5907348       0x5A2394        Unix path: /home/hcq/share/code/meari/meari_sdk/src/mp_ipc_msg.c
+5907728       0x5A2510        Unix path: /home/hcq/share/code/meari/meari_sdk/src/mp_sub_device.c
+5907896       0x5A25B8        Unix path: /home/hcq/share/code/meari/meari_sdk/src/mp_srv_info_manager.c
+5907984       0x5A2610        Unix path: /home/hcq/share/code/meari/meari_sdk/net/pps_firmware_download.c
+5909188       0x5A2AC4        Unix path: /home/hcq/share/code/meari/meari_sdk/components/common/mp_device_manager.c
+5909308       0x5A2B3C        Unix path: /home/hcq/share/code/meari/meari_sdk/components/common/mp_stream_buf.c
+5909520       0x5A2C10        Unix path: /home/hcq/share/code/meari/meari_sdk/components/common/mp_kv.c
+5909768       0x5A2D08        Unix path: /home/hcq/share/code/meari/meari_sdk/components/iot_hub/mp_iot/mp_iot.c
+5910600       0x5A3048        Unix path: /home/hcq/share/code/meari/meari_sdk/components/iot_hub/mp_iot/mp_iot_device_manager.c
+5910724       0x5A30C4        Unix path: /home/hcq/share/code/meari/meari_sdk/components/iot_hub/mp_iot/mp_iot_message.c5911208       0x5A32A8        Unix path: /home/hcq/share/code/meari/meari_sdk/components/mp_ipc_client/mp_client_login.c5911768      0x5A34D8        Unix path: /home/hcq/share/code/meari/meari_sdk/components/mp_ipc_client/mp_client_http_info_exch.c
+5915524       0x5A4384        Unix path: /home/hcq/share/code/meari/meari_sdk/components/mp_ipc_client/mp_client_event.c5917056       0x5A4980        Unix path: /home/hcq/share/code/meari/meari_sdk/components/mp_ipc_client/pps_aliyun_oss.c
+5917600       0x5A4BA0        Unix path: /home/hcq/share/code/meari/meari_sdk/components/mp_ipc_client/mp_cloud_storage.c
+5918112       0x5A4DA0        Unix path: /home/hcq/share/code/meari/meari_sdk/components/p2p/mp_p2p_client.c
+5919796       0x5A5434        Unix path: /home/hcq/share/code/meari/meari_sdk/components/p2p/mp_p2p_cmd_process.c
+5920452       0x5A56C4        Unix path: /home/hcq/share/code/meari/meari_sdk/components/p2p/mp_p2p_stream.c
+5921424       0x5A5A90        Unix path: /home/hcq/share/code/meari/meari_sdk/components/p2p/ppcs.c
+5922776       0x5A5FD8        Base64 standard index table
+5924508       0x5A669C        Unix path: /home/hcq/share/code/meari/meari_sdk/components/mp_ipc_client/pps_aliyun_oss_stream.c
+5925828       0x5A6BC4        SHA256 hash constants, little endian
+5927024       0x5A7070        Unix path: /home/hcq/share/code/meari/meari_sdk/components/iot_hub/wrappers/HAL_linux/HAL_TLS_mbedtls.c
+5932464       0x5A85B0        CRC32 polynomial table, little endian
+5936560       0x5A95B0        CRC32 polynomial table, big endian
+5943960       0x5AB298        CRC32 polynomial table, little endian
+```
+
+A lot to work from here. I've uploaded the firmware image to the repository.
+
 ## Next steps: Opening RTSP or ONVIF (whichever first!)
 
 There is absolutely no info about ppstrong-b6 firmware models. 
@@ -236,13 +321,19 @@ The important thing here is that I don't see any RTSP traffic. If I try to conne
 
 Maybe there is another user/password for RTSP? I need to research further and moreover, know how @youribonnaffe was able to find the previous credentials.
 
+UPDATE: @youribonnaffe found the credentials from the [Bazz's Doorbell Camera firmware](https://github.com/guino/BazzDoorbell/issues/35#issuecomment-853457003), clearly meaning that the similarities between this two products are MASSIVE. I should be finding things at some point given that the products are so similar: Hardware + Firmware + Software (even Tuya and Meari are almost twins!).
+
 ## Further research
 
 - Opening RTSP
 - Opening ONVIF
-- I'm still wordering how @youribonnaffe could find that password we used above.
+- Further research on the firmware
 
 ## Changelog:
+
+2022/05/10
+- Got the firmware and binwalked it.
+- Found where @youribonnaffe got the pass
 
 2022/05/09 
 - Opening the cam
